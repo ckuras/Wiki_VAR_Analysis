@@ -1,7 +1,7 @@
 library(vars)
 library(RCurl)
 
-TopImplicit <- read.csv('C:\\Users\\Class2018\\Documents\\NetworksResearch\\TopImplicit.csv')
+TopImplicit <- read.csv(text=getURL("https://raw.githubusercontent.com/ckuras/Wiki_VAR_Analysis/master/Data/TopImplicit.csv"))
 TopImplicit$FileId <- factor(TopImplicit$FileId)
 
 # function for returning individual VAR results with a max lag of 4 weeks determined by the AIC test 
@@ -79,10 +79,6 @@ boxplot(rsqr.vector)
 corr.vector <- func(vcorr)
 corr.vector
 summary(corr.vector)
-
-
-
-
 
 
 
